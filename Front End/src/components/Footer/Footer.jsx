@@ -88,7 +88,7 @@ const Footer = () => {
                             </address>
                             <a className=' text-white mt-3 mb-1' href='tel:+880 1313 450785'> Contact: {phone} </a>
                             <br />
-                            <a className=' text-white mt-2 mb-0' href='mailto:hello@reinforcelab.com'> Email: {email} </a>
+                            <a className=' text-white mt-2 mb-0' href='mailto:contact@gulfeasyshop.com'> Email: {email} </a>
                             <div className='social_icons d-flex align-items-center gap-15 mt-4'>
                                 <Link to=""><BsLinkedin className='fs-5'/></Link>
                                 <a href={facegook} target="_blank" ><BsYoutube className='fs-5'/></a>
