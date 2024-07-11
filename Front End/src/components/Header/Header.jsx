@@ -220,6 +220,7 @@ const Header = () => {
                     {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
                     <MenuItem onClick={userLogout}>Logout</MenuItem>
                   </Menu>
+                  <div id="google_translate_element"></div>
                 </div>
               </div>
             </div>
