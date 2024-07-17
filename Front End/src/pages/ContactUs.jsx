@@ -107,8 +107,7 @@ const ContactUs = () => {
                             </div>
                             <div>
                             <h4 className="fw-semibold mb-0 text-body-emphasis"> Location:</h4>
-                            <p className="text-body-secondary"><b>Websource Tech</b>,<br/>
-    Suite #302, Level-3, Concord Tower, 113 Kazi Nazrul Islam Avenue, Dhaka - 1000,  Bangladesh</p>
+                            <p className="text-body-secondary"><b>Websource Tech</b>,<br/></p>
                             </div>
                         </div>
 

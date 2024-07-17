@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 03, 2024 at 06:26 AM
+-- Generation Time: Jul 17, 2024 at 07:47 PM
 -- Server version: 8.3.0
--- PHP Version: 8.2.18
+-- PHP Version: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -143,14 +143,17 @@ CREATE TABLE IF NOT EXISTS `brands` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `deleted_by` int UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `brands`
 --
 
 INSERT INTO `brands` (`id`, `name`, `image`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted`, `deleted_at`, `deleted_by`) VALUES
-(1, 'Drake Knox', 'storage/brand_icons/brand_icons-17193225897609.png', 1, '2024-06-25 11:36:29', NULL, '2024-06-25 11:36:29', NULL, 0, NULL, NULL);
+(1, 'Drake Knox', 'storage/brand_icons/brand_icons-17193225897609.png', 1, '2024-06-25 11:36:29', NULL, '2024-06-25 11:36:29', NULL, 0, NULL, NULL),
+(2, 'Drake Knox', 'storage/brand_icons/brand_icons-17193225897609.png', 1, '2024-06-25 11:36:29', NULL, '2024-06-25 11:36:29', NULL, 0, NULL, NULL),
+(3, 'Drake Knox', 'storage/brand_icons/brand_icons-17193225897609.png', 1, '2024-06-25 11:36:29', NULL, '2024-06-25 11:36:29', NULL, 0, NULL, NULL),
+(4, 'Drake Knox', 'storage/brand_icons/brand_icons-17193225897609.png', 1, '2024-06-25 11:36:29', NULL, '2024-06-25 11:36:29', NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -919,14 +922,17 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `deleted_by` int UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `offers`
 --
 
 INSERT INTO `offers` (`id`, `offer_name`, `banner_image`, `start_date`, `end_date`, `note`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted`, `deleted_at`, `deleted_by`) VALUES
-(1, 'Armand Deleon', 'storage/banner_images/banner_images-17193663926043.png', '2024-07-02', '2024-07-06', NULL, 1, '2024-06-25 23:46:33', NULL, '2024-07-02 16:30:41', NULL, 0, NULL, NULL);
+(1, 'Armand Deleon', 'storage/banner_images/banner_images-17193663926043.png', '2024-07-14', '2024-07-17', NULL, 1, '2024-06-25 23:46:33', NULL, '2024-07-13 22:09:49', NULL, 0, NULL, NULL),
+(2, 'Armand Deleon', 'storage/banner_images/banner_images-17193663926043.png', '2024-07-14', '2024-07-20', NULL, 1, '2024-06-25 23:46:33', NULL, '2024-07-13 22:10:02', NULL, 0, NULL, NULL),
+(3, 'Armand Deleon', 'storage/banner_images/banner_images-17193663926043.png', '2024-07-02', '2024-07-06', NULL, 1, '2024-06-25 23:46:33', NULL, '2024-07-02 16:30:41', NULL, 0, NULL, NULL),
+(4, 'Armand Deleon', 'storage/banner_images/banner_images-17193663926043.png', '2024-07-02', '2024-07-06', NULL, 1, '2024-06-25 23:46:33', NULL, '2024-07-02 16:30:41', NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1035,7 +1041,7 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
 (1, 'App\\Models\\User', 1, 'main', '6f598146a1d0391392dc735e21ad3a94e4e31c0980dfc9878fa2c0c939a850fc', '[\"*\"]', '2024-06-25 12:23:50', NULL, '2024-06-25 11:39:48', '2024-06-25 12:23:50'),
-(2, 'App\\Models\\User', 2, 'main', '9efd793ce6ab44bd5c544710420980f294ee29ea2635b6652ba84d3c815a2024', '[\"*\"]', '2024-07-03 07:20:34', NULL, '2024-06-25 23:48:28', '2024-07-03 07:20:34');
+(2, 'App\\Models\\User', 2, 'main', '9efd793ce6ab44bd5c544710420980f294ee29ea2635b6652ba84d3c815a2024', '[\"*\"]', '2024-07-10 06:33:40', NULL, '2024-06-25 23:48:28', '2024-07-10 06:33:40');
 
 -- --------------------------------------------------------
 
@@ -1104,14 +1110,29 @@ CREATE TABLE IF NOT EXISTS `products` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `deleted_by` int UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `category_id`, `subcategory_id`, `image_path`, `code`, `color`, `size`, `brand_id`, `supplier_id`, `current_purchase_cost`, `current_sale_price`, `previous_purchase_cost`, `current_wholesale_price`, `wholesale_minimum_qty`, `previous_wholesale_price`, `previous_sale_price`, `available_quantity`, `discount_type`, `discount`, `unit_type`, `description`, `is_popular`, `is_trending`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted`, `deleted_at`, `deleted_by`) VALUES
-(1, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL);
+(1, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(2, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL),
+(3, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(4, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL),
+(5, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(6, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL),
+(7, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(8, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL),
+(9, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(10, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL),
+(11, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(12, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL),
+(13, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(14, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL),
+(15, 'Celeste', 1, 1, 'storage/product_images/product_images-17193226995065.png', '1001', 'Yellow', 'Medium,Extra Large', 1, 1, 1000.000, 1100.000, NULL, 1050.000, 10.000, NULL, NULL, -94.000, 1, 10.00, NULL, 'sjflsdhfh aghsi ghsui ghsapu', 1, 1, 1, '2024-06-25 11:38:19', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(16, 'McKenzie Schneider', 2, 2, 'storage/product_images/product_images-17205903602148.png', '1002', 'Green', 'Large', 1, 1, 50.000, 55.000, NULL, 52.000, 199.000, NULL, NULL, 0.000, 1, 5.00, NULL, 'fghjkl;', NULL, 1, 1, '2024-07-10 06:46:01', NULL, '2024-07-10 06:46:01', NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1135,14 +1156,15 @@ CREATE TABLE IF NOT EXISTS `product_categories` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `deleted_by` int UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `product_categories`
 --
 
 INSERT INTO `product_categories` (`id`, `name`, `image`, `note`, `status`, `is_popular`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted`, `deleted_at`, `deleted_by`) VALUES
-(1, 'Tallulah Goff', 'storage/category_icons/category_icons-17193225007602.png', 'Eu nemo repellendus', 1, 0, '2024-06-25 11:35:00', NULL, NULL, NULL, 0, NULL, NULL);
+(1, 'Tallulah Goff', 'storage/category_icons/category_icons-17193225007602.png', 'Eu nemo repellendus', 1, 0, '2024-06-25 11:35:00', NULL, NULL, NULL, 0, NULL, NULL),
+(2, 'Philip Mccarty', 'storage/category_icons/category_icons-17205900962715.png', 'In deserunt quo do i', 1, 0, '2024-07-10 06:41:37', NULL, NULL, NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1288,14 +1310,16 @@ CREATE TABLE IF NOT EXISTS `product_sub_categories` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `deleted_by` int UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `product_sub_categories`
 --
 
 INSERT INTO `product_sub_categories` (`id`, `name`, `category_id`, `image`, `note`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted`, `deleted_at`, `deleted_by`) VALUES
-(1, 'McKenzie Schneider', 1, NULL, 'qwertyuiop qwertyuio sdfghjk', 1, '2024-06-25 11:35:49', NULL, NULL, NULL, 0, NULL, NULL);
+(1, 'McKenzie Schneider', 1, NULL, 'qwertyuiop qwertyuio sdfghjk', 1, '2024-06-25 11:35:49', NULL, NULL, NULL, 0, NULL, NULL),
+(2, 'Madaline Campos', 2, NULL, 'Vel non error enim e', 1, '2024-07-10 06:43:18', NULL, NULL, NULL, 0, NULL, NULL),
+(3, 'McKenzie Schneider', 2, NULL, 'srgdjspior', 1, '2024-07-10 06:44:35', NULL, NULL, NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1458,14 +1482,23 @@ CREATE TABLE IF NOT EXISTS `sell_details` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `deleted_by` int UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `sell_details`
 --
 
 INSERT INTO `sell_details` (`id`, `product_id`, `sell_id`, `unit_product_cost`, `unit_sell_price`, `unit_vat`, `sale_quantity`, `total_discount`, `total_payable_amount`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted`, `deleted_at`, `deleted_by`) VALUES
-(1, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL);
+(1, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(2, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(3, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(4, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(5, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(6, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(7, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(8, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(9, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL),
+(10, '1', '1', 1000.00, 1100.00, 0.00, 3.00, 330.00, 2970.00, 1, '2024-06-26 02:25:54', NULL, '2024-06-26 02:25:54', NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
