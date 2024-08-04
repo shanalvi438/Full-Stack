@@ -5,7 +5,7 @@
   }
 
   .hero__slider img{
-      max-height: 400px;
+      max-height: 600px;
       width: 100%;
       object-fit: cover;
   }
